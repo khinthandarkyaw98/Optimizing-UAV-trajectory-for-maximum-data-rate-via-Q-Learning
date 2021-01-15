@@ -12,8 +12,9 @@
    We have 5 routers. It means that there are 5 goals that UAV has to fly. We trained 5000 episodes for each goal. Therefore, we trained 25,000 episodes for the whole program. According to Q-Learning algorithm, we initialize the Q-table, choose an action, perform action, measure reward and update Q-table after one episode is finished. We initialized Q-table with all 0s. 
    We defined our reward matrix. If UAV hits an obstacle, we give -10 reward. UAV gets data rate if it reaches the goal. UAV possesses -1 if collision does not happen or it does not reach the goal.  A2G , Air To Ground channel is defined by LoS, Line of Sight and NLoS, Non-Line of sight links between UAV and user. Data Rate is calculated by using path loss, recieved power, noise (-90 dBm) and bandwidth (2 MHz). We finally gained the reward matrix. There are 49 states in our UAV environment. 0 is the starting point. Our altitude is 50 m (level 0).  We randomly go to 1. We randomly choose action Forward 0. There is no obstacle nor goal in state 1 so the reward will be -1. In state 1, our future action will be one of 6 actions [ Forward 0, Backward 1, Left 2, Right 3, Up 4 , Down 5] 
 So our Q function for this state is 
-Q( 0, 0, 0 ) = Q( 0, 0, 0 ) + 0.01 x [ R( 0, 0, 0 )  + 0.9 x [max (Q( 1, 0, 0 ), Q( 1, 0, 1 ), 
-Q( 1, 0, 2 ), Q( 1, 0, 3), Q( 1, 0, 4 ), Q( 1, 0, 5 ) )- Q( 0, 0, 0 ) ]   = 0 + 0.01 x [ -1 + 0.9 x [0 – 0] ]   = -0.01   
+
+> Q( 0, 0, 0 ) = Q( 0, 0, 0 ) + 0.01 x [ R( 0, 0, 0 )  + 0.9 x [max (Q( 1, 0, 0 ), Q( 1, 0, 1 ), Q( 1, 0, 2 ), Q( 1, 0, 3), Q( 1, 0, 4 ), Q( 1, 0, 5 ) )- Q( 0, 0, 0 ) ]   
+>              = 0 + 0.01 x [ -1 + 0.9 x [0 – 0] ]   = -0.01   
  
    In training case, Q-Matrix is updated after each episode is finished.  By this way, Q-table is updated 5000 times for one goal. After the training case is finished (all goals are trained), the testing case begins. In testing case, UAV flies to reach each goal according to the maximum Q-Matrix value for that state and action. By this way, our UAV flies autonomously with optimal path to all the routers.  
  
