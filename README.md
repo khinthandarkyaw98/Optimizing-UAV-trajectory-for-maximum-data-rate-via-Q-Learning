@@ -16,7 +16,7 @@ So our Q function for this state is
 > Q( 0, 0, 0 ) = Q( 0, 0, 0 ) + 0.01 x [ R( 0, 0, 0 )  + 0.9 x [max (Q( 1, 0, 0 ), Q( 1, 0, 1 ), Q( 1, 0, 2 ), Q( 1, 0, 3), Q( 1, 0, 4 ), Q( 1, 0, 5 ) )- Q( 0, 0, 0 )]   
 >              = 0 + 0.01 x [ -1 + 0.9 x [0 – 0] ]   = -0.01   
  
-``` ```In training case, Q-Matrix is updated after each episode is finished.  By this way, Q-table is updated 5000 times for one goal. After the training case is finished (all goals are trained), the testing case begins. In testing case, UAV flies to reach each goal according to the maximum Q-Matrix value for that state and action. By this way, our UAV flies autonomously with optimal path to all the routers.  
+> In training case, Q-Matrix is updated after each episode is finished.  By this way, Q-table is updated 5000 times for one goal. After the training case is finished (all goals are trained), the testing case begins. In testing case, UAV flies to reach each goal according to the maximum Q-Matrix value for that state and action. By this way, our UAV flies autonomously with optimal path to all the routers.  
  
 4. ```Conclusion```
   Our project optimizes the UAV trajectory for any environment by learning itself. We can apply our program in hazardous environment where humans cannot go such as after an earthquake.  
