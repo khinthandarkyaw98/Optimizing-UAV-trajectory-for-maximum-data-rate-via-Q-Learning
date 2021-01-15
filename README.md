@@ -3,7 +3,7 @@
     The goal of our subject is to optimize the UAV trajectory for maximum data rate via Q-Learning in avoidance of obstacles.   
 
 2. ```Technical approaches```    
-    <p style="text-align:justify">We created an environment for UAV, unmanned aerial vehicle in Unreal Engine. We applied Unreal Engine Blueprint to make random environment whenever the program starts. AirSim API was used to control the simulated UAV on Unreal Engine. Python programming language was used because AirSim API works on C++ or Python.<p>
+    <p align="justify">We created an environment for UAV, unmanned aerial vehicle in Unreal Engine. We applied Unreal Engine Blueprint to make random environment whenever the program starts. AirSim API was used to control the simulated UAV on Unreal Engine. Python programming language was used because AirSim API works on C++ or Python.<p>
     
     We have 7x7 grids. Each grid is 100m long. The grids are the states to which UAV has to fly in accordance with the certain action. We divided 3 levels for different altitudes. UAV cannot fly beyond 200 m and below 50 m. UAV can perform six actions –forward, backward, left, right, top and bottom. Buildings are 60 m, 150 m, 250 m high respectively. We put 5 routers in the environment. The positions of buildings and routers are random.  
     
